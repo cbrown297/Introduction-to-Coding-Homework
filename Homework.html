@@ -1,0 +1,140 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Claudia's Homework</title>
+		<style>
+			div {
+				text-align: center;
+			}
+			h1 {
+				color: #1a64d6;
+				font-family: helvetica, sans-serif;
+				font-size: 34px;
+				line-height: 48px;
+				margin: 0;
+			}
+			h2 {
+				font-size: 34px;
+				margin: 0;
+				padding: 0;
+				font-weight: 400;
+				font-family: helvetica, sans-serif;
+				line-height: 48px;
+			}
+			ul {
+				margin: 0;
+				padding: 30px;
+			}
+			li {
+				display: block;
+				text-align: center;
+				padding: 10px 0;
+				margin: 0 auto;
+				max-width: 400px;
+				margin-bottom: 19px;
+				border-radius: 10px;
+				font-size: 19px;
+				font-family: helvetica, sans-serif;
+				transition: all 200ms ease-in-out;
+			}
+			button {
+				background: #1a64d6;
+				color: white;
+				display: block;
+				margin: 0 auto;
+				font-size: 16px;
+				padding: 16px 24px;
+				line-height: 22px;
+				border-radius: 40px;
+				border: 1px solid #1a64d6;
+				transition: all 150ms ease-in-out;
+				width: 135px;
+			}
+			p {
+				font-size: 17px;
+				text-align: center;
+				word-spacing: 5px;
+				color: #676667;
+				font-family: monospace;
+			}
+
+			button:hover {
+				color: #1a64d6;
+				background: white;
+				cursor: pointer;
+			}
+			li:hover {
+				background: #fffbef;
+			}
+			.temp {
+				font-size: 18px;
+				margin: 20px;
+				font-family: monospace;
+				opacity: 0.7;
+			}
+			.lighttemp {
+				font-size: 18px;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<h1>⛅<br />Currently 21° in Tokyo</h1>
+			<h2>13° /<strong> 23°</strong></h2>
+		</div>
+		<ul>
+			<li>
+				<strong>🌧Tomorrow</strong>
+				<br />
+				<div class="temp">
+					<span class="lighttemp">10° /</span><strong> 22°</strong>
+				</div>
+			</li>
+
+			<li>
+				<div>
+					<strong>🌥Saturday</strong>
+					<br />
+					<div class="temp">
+						<span class="lighttemp">15° /</span><strong> 17°</strong>
+					</div>
+					<li>
+						<strong>☀Sunday</strong>
+						<br />
+						<div class="temp">
+							<span class="lighttemp">25° /</span><strong> 28°</strong>
+						</div>
+					</li>
+					<button>Change city</button>
+					<p>Coded by Claudia Brown</p>
+				</div>
+			</li>
+		</ul>
+		<script>
+			function updateHeading(newHeading) {
+				let heading = document.querySelector("h1");
+				heading.innerHTML = newHeading;
+			}
+			function changeCity() {
+				temp = prompt("What temperature is it?");
+				return temp > 0;
+			}
+			function change() {
+				let city = prompt("What city do you live in?");
+				let heading = document.querySelector("h1");
+				if (changeCity()) {
+					updateHeading(`🤩<br /> Currently ${temp}°C in ${city}`);
+				} else {
+					updateHeading(`🥶<br /> Currently ${temp}°C in ${city}`);
+				}
+			}
+			let changeCityButton = document.querySelector("button");
+			changeCityButton.addEventListener("click", change);
+		</script>
+	</body>
+</html>
